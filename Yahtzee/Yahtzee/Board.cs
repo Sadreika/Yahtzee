@@ -12,7 +12,6 @@ namespace Yahtzee
         private List<int> values = new List<int>();
         private List<int> finalPlayerValues = new List<int>();
 
-
         public int fillingFinalValues(string choice)
         {
             int cantWriteNewValue = 0;
@@ -41,7 +40,7 @@ namespace Yahtzee
         }
         public void showboard()
         {
-            Console.Clear();
+            
             for (int i = 0; i < boardAtributesNames.Count; i++)
             {
                 if(boardAtributesNames[i].Length <= 6)

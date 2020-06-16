@@ -12,21 +12,15 @@ namespace Yahtzee
         {
             Player playerObject = new Player();
             Player pcObject = new Player();
-            
-            playerObject.playersTurn();
-            
-
-            playerObject.playersTurn();
-          
-
-
-            playerObject.playersTurn();
-            
-
-
-            playerObject.playersTurn();
            
+           // while(true)
+            {
+                
+                playerObject.playersTurn();
+                Console.Clear();
+                playerObject.playersTurn();
 
+            }
 
         }
     }
