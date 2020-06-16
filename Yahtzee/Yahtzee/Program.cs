@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Yahtzee
 {
-    class Program
+    public class Program : Player
     {
         static void Main(string[] args)
         {
+            Player playerObject = new Player();
+            playerObject.playersTurn();
+            Console.WriteLine("TurnEnded");
+            
         }
     }
 }
