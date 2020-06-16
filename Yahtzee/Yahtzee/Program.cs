@@ -11,9 +11,23 @@ namespace Yahtzee
         static void Main(string[] args)
         {
             Player playerObject = new Player();
-            playerObject.playersTurn();
-            Console.WriteLine("TurnEnded");
+            Player pcObject = new Player();
             
+            playerObject.playersTurn();
+            
+
+            playerObject.playersTurn();
+          
+
+
+            playerObject.playersTurn();
+            
+
+
+            playerObject.playersTurn();
+           
+
+
         }
     }
 }
