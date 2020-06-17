@@ -45,11 +45,11 @@ namespace Yahtzee
             {
                 if(boardAtributesNames[i].Length <= 6)
                 {
-                    Console.WriteLine(boardAtributesNames[i] + "\t\t" + values[i] + "Final: " + finalPlayerValues[i]);
+                    Console.WriteLine(boardAtributesNames[i] + "\t\t" + values[i] + "\tFinal: " + finalPlayerValues[i]);
                 }
                 else
                 {
-                    Console.WriteLine(boardAtributesNames[i] + "\t" + values[i] + "Final: " + finalPlayerValues[i]);
+                    Console.WriteLine(boardAtributesNames[i] + "\t" + values[i] + "\tFinal: " + finalPlayerValues[i]);
                 }
             }
             Console.WriteLine();

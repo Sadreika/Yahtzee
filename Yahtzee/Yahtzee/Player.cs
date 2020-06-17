@@ -1,12 +1,6 @@
-﻿using StatsdClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Globalization;
 using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Yahtzee
 {
@@ -14,18 +8,30 @@ namespace Yahtzee
     {
         private int[] DicesArray = new int[5];
         private bool[] ActiveDicesArray = new bool[5];
-        private int throws = 0;
         private Random diceValue = new Random();
+        private int throws;
         private bool turnEnds;
 
         public Player()
         {
             fillingLists();
         }
-        public void playersTurn()
+        public void settingTurn()
         {
             turnEnds = false;
             throws = 0;
+            for(int i = 0; i < 5; i++)
+            {
+                DicesArray[i] = 0;
+                ActiveDicesArray[i] = false;
+            }
+        }
+
+        public void playersTurn(string whoPlays)
+        {
+            Console.WriteLine(whoPlays + " turn\n");
+            settingTurn();
+
             throwingAllDices();
             throws = throws + 1;
             while(throws < 4)
@@ -125,7 +131,6 @@ namespace Yahtzee
                 }
                 else
                 {
-                    Console.WriteLine("Rolling dices");
                     writingFinalRezult = 0;
                 }
             }
