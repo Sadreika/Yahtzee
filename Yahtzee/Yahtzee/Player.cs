@@ -26,7 +26,6 @@ namespace Yahtzee
                 ActiveDicesArray[i] = false;
             }
         }
-
         public void playersTurn(string whoPlays)
         {
             Console.WriteLine(whoPlays + " turn\n");
@@ -58,7 +57,6 @@ namespace Yahtzee
                 DicesArray[whichDice] = diceValue.Next(1, 7);
             }
         }
-
         public void rollDices()
         {
             for(int i = 0; i < 5; i++)
@@ -69,7 +67,6 @@ namespace Yahtzee
                 }
             }   
         }
-
         public void throwingAllDices()
         {
             for (int i = 0; i < 5; i++)

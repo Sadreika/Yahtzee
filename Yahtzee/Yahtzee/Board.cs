@@ -54,7 +54,6 @@ namespace Yahtzee
             }
             Console.WriteLine();
         }
-
         public void calculatingValues(int[] dicesArray)
         {
             for(int i = 0; i < values.Count; i++)

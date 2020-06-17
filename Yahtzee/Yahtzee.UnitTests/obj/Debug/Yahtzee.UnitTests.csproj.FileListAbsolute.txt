@@ -1,0 +1,17 @@
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Yahtzee.UnitTests.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Yahtzee.UnitTests.pdb
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Yahtzee.exe
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Yahtzee.pdb
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Yahtzee.exe.config
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\obj\Debug\Yahtzee.UnitTests.csprojAssemblyReference.cache
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\obj\Debug\Yahtzee.UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\obj\Debug\Yahtzee.UnitTests.csproj.CopyComplete
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\obj\Debug\Yahtzee.UnitTests.dll
+C:\Users\mariu\Documents\GitHub\Yahtzee\Yahtzee\Yahtzee.UnitTests\obj\Debug\Yahtzee.UnitTests.pdb

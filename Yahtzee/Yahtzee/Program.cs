@@ -16,7 +16,7 @@ namespace Yahtzee
             {
                 playerObject.playersTurn("Player1");
                 Console.Clear();
-                pcObject.playersTurn("PC");
+                pcObject.playersTurn("Player2");
                 Console.Clear();
             }
         }
