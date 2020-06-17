@@ -15,7 +15,7 @@ namespace Yahtzee
         public int fillingFinalValues(string choice)
         {
             int cantWriteNewValue = 0;
-            if(finalPlayerValues[Int16.Parse(choice) - 1] == 0)
+            if(finalPlayerValues[Int16.Parse(choice) - 1] == -1)
             {
                 finalPlayerValues[Int16.Parse(choice) - 1] = values[Int16.Parse(choice) - 1];
             }
@@ -26,16 +26,20 @@ namespace Yahtzee
             return cantWriteNewValue;
         }
 
+        public List<int> gettingFinalPlayerValues()
+        {
+            return finalPlayerValues;
+        }
         public void fillingLists()
         {
             string[] attributes = {
             "Fives", "One Pair",
-            "Chance", "Total score"};
+            "Chance"};
             boardAtributesNames.AddRange(attributes);
             for(int i = 0; i < boardAtributesNames.Count; i++)
             {
                 values.Add(0);
-                finalPlayerValues.Add(0);
+                finalPlayerValues.Add(-1);
             }
         }
         public void showboard()

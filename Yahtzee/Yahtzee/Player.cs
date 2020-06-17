@@ -33,12 +33,12 @@ namespace Yahtzee
 
             throwingAllDices();
             throws = throws + 1;
-            while(throws < 4)
+            while(throws <= 3)
             {
                 calculatingValues(DicesArray);
                 showboard();
                 showingData();
-                asking();
+                asking(throws);
                 if(turnEnds == true)
                 {
                     break;
@@ -74,7 +74,6 @@ namespace Yahtzee
                 rollDice(false, i);
             }
         }
-
         public void disablingDices(List<string> list)
         {
             for (int i = 0; i < list.Count; i++)
@@ -89,57 +88,69 @@ namespace Yahtzee
                 }
             }
         }
-
-        public int askingAboutResult()
+        public string gettingCorrectResultRowNumber()
         {
-            int writingFinalRezult = 0;
-            Console.WriteLine("Do you want to write result?(y/n)");
+            Console.WriteLine("Write number of result row");
             string answer = Console.ReadLine();
-            if(answer.Equals("y") || answer.Equals("n"))
+            int correctNumber = checkingAnswer(answer);
+            if (correctNumber == 1)
             {
-                if (answer.Equals("y"))
+                while (correctNumber == 1)
                 {
                     Console.WriteLine("Write number of result row");
                     answer = Console.ReadLine();
-                    int correctNumber = checkingAnswer(answer);
-                    if (correctNumber == 1)
+                    correctNumber = checkingAnswer(answer);
+                }
+            }
+            return answer;
+        }
+        public void enteringValues()
+        {
+            string row = gettingCorrectResultRowNumber();
+            int valuesExists = fillingFinalValues(row);
+            if (valuesExists == 1)
+            {
+                while (valuesExists == 1)
+                {
+                    Console.WriteLine("Value already exist in final result board");
+                    row = gettingCorrectResultRowNumber();
+                    valuesExists = fillingFinalValues(row);
+                }
+            }
+        }
+        public int askingAboutResult(int throws)
+        {
+            int writingFinalRezult = 0;
+            if(throws == 3)
+            {
+                Console.WriteLine("You must enter last value");
+                enteringValues();
+            }
+            else
+            {
+                Console.WriteLine("Do you want to write result?(y/n)");
+                string answer = Console.ReadLine();
+                if (answer.Equals("y") || answer.Equals("n"))
+                {
+                    if (answer.Equals("y"))
                     {
-                        while(correctNumber == 1)
-                        {
-                            Console.WriteLine("Write number of result row");
-                            answer = Console.ReadLine();
-                            correctNumber = checkingAnswer(answer);
-                        }
+                        enteringValues();
+                        turnEnds = true;
+                        writingFinalRezult = 1;
                     }
                     else
                     {
-                        int valuesExists = fillingFinalValues(answer);
-                        if (valuesExists == 1)
-                        {
-                            Console.WriteLine("Value already exist in final result board");
-                            writingFinalRezult = 2;
-                        }
-                        else
-                        {
-                            turnEnds = true;
-                            writingFinalRezult = 1;
-                        }
+                        writingFinalRezult = 0;
                     }
                 }
                 else
                 {
-                    writingFinalRezult = 0;
+                    Console.WriteLine("Wrong value");
+                    writingFinalRezult = 2;
                 }
-            }
-            else
-            {
-                Console.WriteLine("Wrong value");
-                writingFinalRezult = 2;
-
             }
             return writingFinalRezult;
         }
-
         public int checkingAnswer(string answer)
         {
             int isWrongValue = 0;
@@ -159,35 +170,37 @@ namespace Yahtzee
             }
             return isWrongValue;
         }
-        public void asking()
+        public void asking(int throws)
         {
-            int validResult = askingAboutResult();
-            if (validResult == 0)
+            int validResult = askingAboutResult(throws);
+      
+            if (validResult == 0 && throws != 3)
             {
                 Console.WriteLine("Which dice you want to keep? (write only numbers, if you want to reroll all dices, press enter) ");
                 Console.WriteLine("Example: 1,2,3. ',' is a must");
+                Console.WriteLine("If dice is already disabled, entering its number you will enable it and it will be rerolled ");
                 string answer = Console.ReadLine();
                 List<string> answerList = answer.Split(',').ToList();
                 if (answerList.Count == 1 && (answerList[0] == ""))
                 {
-                    Console.WriteLine("No dices were saved");
+                    Console.WriteLine("No dices were selected");
                 }
                 else
                 {
                     if (answerList.Count > 5)
                     {
                         Console.WriteLine("Too many numbers were entered");
-                        asking();
+                        asking(throws);
                     }
                     else
                     {
                         if (checkingIfAllElementsAreNumbers(answerList) == 1)
                         {
-                            asking();
+                            asking(throws);
                         }
                         else if (doNumbersReapeat(answerList) == 1)
                         {
-                            asking();
+                            asking(throws);
                         }
                         else
                         {
@@ -198,7 +211,7 @@ namespace Yahtzee
             }
             else if(validResult == 2)
             {
-                askingAboutResult();
+                asking(throws);
             }
             else
             {
@@ -259,6 +272,16 @@ namespace Yahtzee
                                                "|" + DicesArray[2] +
                                                "|" + DicesArray[3] +
                                                "|" + DicesArray[4]);
+        }
+        public int result()
+        {
+            var finalPlayerValues = gettingFinalPlayerValues();
+            int sum = 0;
+            for (int i = 0; i < finalPlayerValues.Count; i++)
+            {
+                sum = sum + finalPlayerValues[i];
+            }
+            return sum;
         }
     }
 }
